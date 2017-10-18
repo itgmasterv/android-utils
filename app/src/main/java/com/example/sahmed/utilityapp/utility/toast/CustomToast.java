@@ -1,4 +1,4 @@
-package com.example.sahmed.utilityapp.toast;
+package com.example.sahmed.utilityapp.utility.toast;
 
 import android.content.Context;
 import android.os.Handler;

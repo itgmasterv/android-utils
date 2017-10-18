@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp">
+
+    <Button
+        android:id="@+id/btn_short_snackbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="snackbar_show_short" />
+
+
+
+    <Button
+        android:id="@+id/btn_short_snackbar_with_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="snackbar_show_short_with_action" />
+
+    <Button
+        android:id="@+id/btn_long_snackbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="snackbar_show_long" />
+
+    <Button
+        android:id="@+id/btn_long_snackbar_with_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="snackbar_show_long_with_action" />
+
+    <Button
+        android:id="@+id/btn_indefinite_snackbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="snackbar_show_indefinite" />
+
+    <Button
+        android:id="@+id/btn_indefinite_snackbar_with_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="snackbar_show_indefinite_with_action" />
+
+    <Button
+        android:id="@+id/btn_add_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="snackbar_add_view" />
+
+    <Button
+        android:id="@+id/btn_add_view_with_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="snackbar_add_view_with_action" />
+
+    <Button
+        android:id="@+id/btn_show_success"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="snackbar_show_success" />
+
+    <Button
+        android:id="@+id/btn_show_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="snackbar_show_warning" />
+
+    <Button
+        android:id="@+id/btn_show_error"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="snackbar_show_error" />
+
+
+    <Button
+        android:id="@+id/btn_dismiss_snackbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="snackbar_dismiss" />
+
+</LinearLayout>

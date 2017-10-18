@@ -1,0 +1,116 @@
+package com.example.sahmed.utilityapp.utility.regex;
+
+/**
+ * <pre>
+ *     author: Blankj
+ *     blog  : http://blankj.com
+ *     time  : 2017/03/13
+ *     desc  : Regularly related constants
+ * </pre>
+ */
+public final class RegexConstants {
+
+    /**
+     * Regular: phone number (simple)
+     */
+    public static final String REGEX_MOBILE_SIMPLE = "^[1]\\d{10}$";
+    /**
+     * Regular: mobile phone number (accurate)
+     * <p>mobile：134(0-8)、135、136、137、138、139、147、150、151、152、157、158、159、178、182、183、184、187、188</p>
+     * <p>China Unicom：130、131、132、145、155、156、171、175、176、185、186</p>
+     * <p>telecommunications：133、153、173、177、180、181、189</p>
+     * <p>Global star：1349</p>
+     * <p>Virtual operators：170</p>
+     */
+    public static final String REGEX_MOBILE_EXACT  = "^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,1,3,5-8])|(18[0-9])|(147))\\d{8}$";
+    /**
+     * Regular: Phone number
+     */
+    public static final String REGEX_TEL           = "^0\\d{2,3}[- ]?\\d{7,8}";
+    /**
+     * Regular: ID number 15 bits
+     */
+    public static final String REGEX_ID_CARD15     = "^[1-9]\\d{7}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}$";
+    /**
+     * Regular: ID number 18 bits
+     */
+    public static final String REGEX_ID_CARD18     = "^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}([0-9Xx])$";
+    /**
+     * Regular: mailboxes
+     */
+    public static final String REGEX_EMAIL         = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
+    /**
+     * 正则：URL
+     */
+    public static final String REGEX_URL           = "[a-zA-z]+://[^\\s]*";
+    /**
+     * Regular: Chinese characters
+     */
+    public static final String REGEX_ZH            = "^[\\u4e00-\\u9fa5]+$";
+    /**
+     * Regular: User name, in the range of a-z, A-Z, 0-9, "_", Chinese characters, can not end with "_", user name must be 6-20
+     */
+    public static final String REGEX_USERNAME      = "^[\\w\\u4e00-\\u9fa5]{6,20}(?<!_)$";
+    /**
+     * Regular: yyyy-MM-dd format date check, has been considered flat leap year
+     */
+    public static final String REGEX_DATE          = "^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$";
+    /**
+     * Regular: IP address
+     */
+    public static final String REGEX_IP            = "((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)";
+
+    ///////////////////////////////////////////////////////////////////////////
+    // The following is taken from http://tool.oschina.net/regex
+    ///////////////////////////////////////////////////////////////////////////
+
+    /**
+     *  Regular: double byte characters (including Chinese characters included)
+     */
+    public static final String REGEX_DOUBLE_BYTE_CHAR     = "[^\\x00-\\xff]";
+    /**
+     *Regular: blank line
+
+     */
+    public static final String REGEX_BLANK_LINE           = "\\n\\s*\\r";
+    /**
+     * Regular: QQ number
+     */
+    public static final String REGEX_TENCENT_NUM          = "[1-9][0-9]{4,}";
+    /**
+     * Regular: China Post Code
+     */
+    public static final String REGEX_ZIP_CODE             = "[1-9]\\d{5}(?!\\d)";
+    /**
+     * Regular: positive integer
+     */
+    public static final String REGEX_POSITIVE_INTEGER     = "^[1-9]\\d*$";
+    /**
+     * Regular: Negative integer
+     */
+    public static final String REGEX_NEGATIVE_INTEGER     = "^-[1-9]\\d*$";
+    /**
+     * Regular: Integer
+     */
+    public static final String REGEX_INTEGER              = "^-?[1-9]\\d*$";
+    /**
+     * Regular: non-negative integer (positive integer + 0)
+     */
+    public static final String REGEX_NOT_NEGATIVE_INTEGER = "^[1-9]\\d*|0$";
+    /**
+     * Regular: non-positive integer (negative integer + 0)
+     */
+    public static final String REGEX_NOT_POSITIVE_INTEGER = "^-[1-9]\\d*|0$";
+    /**
+     * Regular: Positive floating point number
+     */
+    public static final String REGEX_POSITIVE_FLOAT       = "^[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*$";
+    /**
+     * Regular: negative floating point number
+     */
+    public static final String REGEX_NEGATIVE_FLOAT       = "^-[1-9]\\d*\\.\\d*|-0\\.\\d*[1-9]\\d*$";
+
+    ///////////////////////////////////////////////////////////////////////////
+    // If u want more please visit http://toutiao.com/i6231678548520731137
+    ///////////////////////////////////////////////////////////////////////////
+}
