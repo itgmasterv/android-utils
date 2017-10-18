@@ -680,10 +680,10 @@ public class FileUtils {
     }
 
     /**
-     * 获取文件最后修改的毫秒时间戳
+     * Get the last modified timestamp of the file
      *
-     * @param filePath 文件路径
-     * @return 文件最后修改的毫秒时间戳
+     * @param filePath file path
+     * @return The file is last modified by the millisecond timestamp
      */
 
     public static long getFileLastModified(final String filePath) {
@@ -691,10 +691,10 @@ public class FileUtils {
     }
 
     /**
-     * 获取文件最后修改的毫秒时间戳
+     * Get the last modified timestamp of the file
      *
-     * @param file 文件
-     * @return 文件最后修改的毫秒时间戳
+     * @param file file
+     * @return The file is last modified by the millisecond timestamp
      */
     public static long getFileLastModified(final File file) {
         if (file == null) return -1;
@@ -702,20 +702,20 @@ public class FileUtils {
     }
 
     /**
-     * 简单获取文件编码格式
+     * Simply get the file encoding format
      *
-     * @param filePath 文件路径
-     * @return 文件编码
+     * @param filePath file Path
+     * @return file encoding
      */
     public static String getFileCharsetSimple(final String filePath) {
         return getFileCharsetSimple(getFileByPath(filePath));
     }
 
     /**
-     * 简单获取文件编码格式
+     * Simply get the file encoding format
      *
-     * @param file 文件
-     * @return 文件编码
+     * @param file file
+     * @return file encoding
      */
     public static String getFileCharsetSimple(final File file) {
         int p = 0;
@@ -741,21 +741,21 @@ public class FileUtils {
     }
 
     /**
-     * 获取文件行数
+     * Get the number of rows
      *
-     * @param filePath 文件路径
-     * @return 文件行数
+     * @param filePath file Path
+     * @return Number of file lines
      */
     public static int getFileLines(final String filePath) {
         return getFileLines(getFileByPath(filePath));
     }
 
     /**
-     * 获取文件行数
-     * <p>比readLine要快很多</p>
+     * Get the number of rows
+     * <p>Much faster than readLine</p>
      *
-     * @param file 文件
-     * @return 文件行数
+     * @param file file
+     * @return Number of file lines
      */
     public static int getFileLines(final File file) {
         int count = 1;
@@ -786,20 +786,20 @@ public class FileUtils {
     }
 
     /**
-     * 获取目录大小
+     * Get the directory size
      *
-     * @param dirPath 目录路径
-     * @return 文件大小
+     * @param dirPath Directory path
+     * @return File size
      */
     public static String getDirSize(final String dirPath) {
         return getDirSize(getFileByPath(dirPath));
     }
 
     /**
-     * 获取目录大小
+     * Get the directory size
      *
-     * @param dir 目录
-     * @return 文件大小
+     * @param dir table of Contents
+     * @return File size
      */
     public static String getDirSize(final File dir) {
         long len = getDirLength(dir);
@@ -807,20 +807,20 @@ public class FileUtils {
     }
 
     /**
-     * 获取文件大小
+     * Get the file size
      *
-     * @param filePath 文件路径
-     * @return 文件大小
+     * @param filePath file Path
+     * @return File size
      */
     public static String getFileSize(final String filePath) {
         return getFileSize(getFileByPath(filePath));
     }
 
     /**
-     * 获取文件大小
+     * Get the file size
      *
-     * @param file 文件
-     * @return 文件大小
+     * @param file file
+     * @return File size
      */
     public static String getFileSize(final File file) {
         long len = getFileLength(file);
@@ -828,20 +828,20 @@ public class FileUtils {
     }
 
     /**
-     * 获取目录长度
+     * Get the directory length
      *
-     * @param dirPath 目录路径
-     * @return 目录长度
+     * @param dirPath Directory path
+     * @return Directory length
      */
     public static long getDirLength(final String dirPath) {
         return getDirLength(getFileByPath(dirPath));
     }
 
     /**
-     * 获取目录长度
+     * Get the directory length
      *
-     * @param dir 目录
-     * @return 目录长度
+     * @param dir table of Contents
+     * @return Directory length
      */
     public static long getDirLength(final File dir) {
         if (!isDir(dir)) return -1;
@@ -860,20 +860,20 @@ public class FileUtils {
     }
 
     /**
-     * 获取文件长度
+     * Get the file length
      *
-     * @param filePath 文件路径
-     * @return 文件长度
+     * @param filePath file Path
+     * @return File length
      */
     public static long getFileLength(final String filePath) {
         return getFileLength(getFileByPath(filePath));
     }
 
     /**
-     * 获取文件长度
+     * Get the file length
      *
-     * @param file 文件
-     * @return 文件长度
+     * @param file file
+     * @return File length
      */
     public static long getFileLength(final File file) {
         if (!isFile(file)) return -1;
@@ -881,10 +881,10 @@ public class FileUtils {
     }
 
     /**
-     * 获取文件的MD5校验码
+     * Get the MD5 checksum of the file
      *
-     * @param filePath 文件路径
-     * @return 文件的MD5校验码
+     * @param filePath file Path
+     * @return The MD5 checksum of the file
      */
     public static String getFileMD5ToString(final String filePath) {
         File file = isSpace(filePath) ? null : new File(filePath);
@@ -892,30 +892,31 @@ public class FileUtils {
     }
 
     /**
-     * 获取文件的MD5校验码
+     * Get the MD5 checksum of the file
      *
-     * @param file 文件
-     * @return 文件的MD5校验码
+     * @param file file
+     * @return The MD5 checksum of the file
      */
     public static String getFileMD5ToString(final File file) {
         return bytes2HexString(getFileMD5(file));
     }
 
     /**
-     * 获取文件的MD5校验码
+     * Get the MD5 checksum of the file
      *
-     * @param filePath 文件路径
-     * @return 文件的MD5校验码
+     * @param filePath file Path
+     * @return The MD5 checksum of the file
+
      */
     public static byte[] getFileMD5(final String filePath) {
         return getFileMD5(getFileByPath(filePath));
     }
 
     /**
-     * 获取文件的MD5校验码
+     * Get the MD5 checksum of the file
      *
-     * @param file 文件
-     * @return 文件的MD5校验码
+     * @param file file
+     * @return The MD5 checksum of the file
      */
     public static byte[] getFileMD5(final File file) {
         if (file == null) return null;
@@ -939,10 +940,10 @@ public class FileUtils {
     }
 
     /**
-     * 获取全路径中的最长目录
+     * Gets the longest directory in the full path
      *
-     * @param file 文件
-     * @return filePath最长目录
+     * @param file file
+     * @return filePath longest directory
      */
     public static String getDirName(final File file) {
         if (file == null) return null;
@@ -950,10 +951,10 @@ public class FileUtils {
     }
 
     /**
-     * 获取全路径中的最长目录
+     * Gets the longest directory in the full path
      *
-     * @param filePath 文件路径
-     * @return filePath最长目录
+     * @param filePath file Path
+     * @return filePath longest directory
      */
     public static String getDirName(final String filePath) {
         if (isSpace(filePath)) return filePath;
@@ -962,10 +963,10 @@ public class FileUtils {
     }
 
     /**
-     * 获取全路径中的文件名
+     * Gets the file name in the full path
      *
-     * @param file 文件
-     * @return 文件名
+     * @param file file
+     * @return file name
      */
     public static String getFileName(final File file) {
         if (file == null) return null;
@@ -973,10 +974,10 @@ public class FileUtils {
     }
 
     /**
-     * 获取全路径中的文件名
+     * Gets the file name in the full path
      *
-     * @param filePath 文件路径
-     * @return 文件名
+     * @param filePath file Path
+     * @return file name
      */
     public static String getFileName(final String filePath) {
         if (isSpace(filePath)) return filePath;
@@ -985,10 +986,10 @@ public class FileUtils {
     }
 
     /**
-     * 获取全路径中的不带拓展名的文件名
+     * Gets the file name in the full path without the extension
      *
-     * @param file 文件
-     * @return 不带拓展名的文件名
+     * @param file file
+     * @return The file name without the extension
      */
     public static String getFileNameNoExtension(final File file) {
         if (file == null) return null;
@@ -996,10 +997,10 @@ public class FileUtils {
     }
 
     /**
-     * 获取全路径中的不带拓展名的文件名
+     * Gets the file name in the full path without the extension
      *
-     * @param filePath 文件路径
-     * @return 不带拓展名的文件名
+     * @param filePath file Path
+     * @return The file name without the extension
      */
     public static String getFileNameNoExtension(final String filePath) {
         if (isSpace(filePath)) return filePath;
@@ -1015,10 +1016,11 @@ public class FileUtils {
     }
 
     /**
-     * 获取全路径中的文件拓展名
+     * Gets the file extension in the full path
      *
-     * @param file 文件
-     * @return 文件拓展名
+     * @param file file
+     * @return File extension
+
      */
     public static String getFileExtension(final File file) {
         if (file == null) return null;
@@ -1026,10 +1028,10 @@ public class FileUtils {
     }
 
     /**
-     * 获取全路径中的文件拓展名
+     * Gets the file extension in the full path
      *
-     * @param filePath 文件路径
-     * @return 文件拓展名
+     * @param filePath file Path
+     * @return File extension
      */
     public static String getFileExtension(final String filePath) {
         if (isSpace(filePath)) return filePath;
@@ -1046,12 +1048,12 @@ public class FileUtils {
     private static final char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     /**
-     * byteArr转hexString
-     * <p>例如：</p>
+     * byteArr to hexString
+     * <p>E.g：</p>
      * bytes2HexString(new byte[] { 0, (byte) 0xa8 }) returns 00A8
      *
-     * @param bytes 字节数组
-     * @return 16进制大写字符串
+     * @param bytes Byte array
+     * @return Hexadecimal uppercase string
      */
     private static String bytes2HexString(final byte[] bytes) {
         if (bytes == null) return null;
@@ -1066,11 +1068,11 @@ public class FileUtils {
     }
 
     /**
-     * 字节数转合适内存大小
-     * <p>保留3位小数</p>
+     * The number of bytes is transferred to the appropriate memory size
+     * <p>Reserved 3 decimal places</p>
      *
-     * @param byteNum 字节数
-     * @return 合适内存大小
+     * @param byteNum The number of bytes
+     * @return Appropriate memory size
      */
     @SuppressLint("DefaultLocale")
     private static String byte2FitMemorySize(final long byteNum) {
