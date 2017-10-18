@@ -678,7 +678,7 @@ public final class ImageUtils {
     }
 
     /**
-     * 转为圆角图片
+     * Turn rounded picture
      *
      * @param src        Source image
      * @param radius     Rounded degree
@@ -717,7 +717,7 @@ public final class ImageUtils {
     }
 
     /**
-     * 添加圆角边框
+     * Add a rounded border
      *
      * @param src          Source image
      * @param borderSize   borderSize
@@ -733,7 +733,7 @@ public final class ImageUtils {
     }
 
     /**
-     * 添加圆角边框
+     * add a Corner Border
      *
      * @param src          Source image
      * @param borderSize    borderSize
@@ -751,7 +751,7 @@ public final class ImageUtils {
     }
 
     /**
-     * 添加圆形边框
+     * Add a circular border
      *
      * @param src        Source image
      * @param borderSize borderSize
@@ -765,7 +765,7 @@ public final class ImageUtils {
     }
 
     /**
-     * 添加圆形边框
+     * Add a circular border
      *
      * @param src        Source image
      * @param borderSize borderSize
@@ -781,7 +781,7 @@ public final class ImageUtils {
     }
 
     /**
-     * 添加边框
+     * add Border
      *
      * @param src        Source image
      * @param borderSize    borderSize
@@ -869,7 +869,7 @@ public final class ImageUtils {
     }
 
     /**
-     * 添加文字水印
+     * add Text Watermark
      *
      * @param src      Source image
      * @param content  Watermark text
