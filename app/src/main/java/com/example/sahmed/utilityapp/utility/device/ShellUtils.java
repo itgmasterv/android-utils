@@ -1,5 +1,7 @@
 package com.example.sahmed.utilityapp.utility.device;
 
+import com.example.sahmed.utilityapp.utility.CloseUtils;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -128,7 +130,7 @@ public final class ShellUtils {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-           // CloseUtils.closeIO(os, successResult, errorResult);
+            CloseUtils.closeIO(os, successResult, errorResult);
             if (process != null) {
                 process.destroy();
             }
