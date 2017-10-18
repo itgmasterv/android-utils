@@ -127,7 +127,6 @@ public final class PermissionUtils {
 
     /**
      * Whether there is permission to explain the need
-
      */
     private static boolean shouldShowRequestPermissionRationale(final Context context, final String... deniedPermissions) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) return false;
