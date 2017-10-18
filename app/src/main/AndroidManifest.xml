@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".utility.sdCard.SdCardActicity">
+        <activity android:name=".utility.device.DeviceActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,8 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".utility.toast.ToastActivity" />
-        <activity android:name=".utility.snackbar.SnackbarActivityUtils"/>
+        <activity android:name=".utility.snackbar.SnackbarActivityUtils" />
+        <activity android:name=".utility.sdCard.SdCardActicity"/>
     </application>
 
 </manifest>
