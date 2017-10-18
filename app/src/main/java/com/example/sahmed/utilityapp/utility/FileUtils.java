@@ -293,7 +293,7 @@ public class FileUtils {
         if (srcFile == null || destFile == null) return false;
         // Returns false if the source and destination files are the same
         if (srcFile.equals(destFile)) return false;
-        // The source file does not exist or is not a file that returns false
+         // The source file does not exist or is not a file that returns false
         if (!srcFile.exists() || !srcFile.isFile()) return false;
         if (destFile.exists()) {// The target file exists
             if (listener.onReplace()) {// Need to overwrite the old file
@@ -307,7 +307,7 @@ public class FileUtils {
         // The destination directory does not exist to return false
         if (!createOrExistsDir(destFile.getParentFile())) return false;
         try {
-            return FileIOUtils.writeFileFromIS(destFile, new FileInputStream(srcFile), false)
+            return FileIOUtils.writeFileFromInputStream(destFile, new FileInputStream(srcFile), false)
                     && !(isMove && !deleteFile(srcFile));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
