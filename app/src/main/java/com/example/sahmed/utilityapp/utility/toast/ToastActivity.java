@@ -1,4 +1,4 @@
-package com.example.sahmed.utilityapp.toast;
+package com.example.sahmed.utilityapp.utility.toast;
 
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;

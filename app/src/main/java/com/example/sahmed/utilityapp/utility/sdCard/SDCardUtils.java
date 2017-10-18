@@ -1,4 +1,4 @@
-package com.example.sahmed.utilityapp.sdCard;
+package com.example.sahmed.utilityapp.utility.sdCard;
 
 import android.content.Context;
 import android.os.storage.StorageManager;

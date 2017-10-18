@@ -1,4 +1,4 @@
-package com.example.sahmed.utilityapp.regex;
+package com.example.sahmed.utilityapp.utility.regex;
 
 /**
  * <pre>

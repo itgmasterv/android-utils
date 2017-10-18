@@ -1,6 +1,6 @@
 package com.example.sahmed.utilityapp;
 
-import com.example.sahmed.utilityapp.regex.RegexUtils;
+import com.example.sahmed.utilityapp.utility.regex.RegexUtils;
 
 import org.junit.Test;
 

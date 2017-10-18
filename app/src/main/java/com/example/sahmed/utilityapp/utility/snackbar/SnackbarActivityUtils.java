@@ -1,16 +1,14 @@
-package com.example.sahmed.utilityapp.snackbar;
+package com.example.sahmed.utilityapp.utility.snackbar;
 
 import android.graphics.Color;
-import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.sahmed.utilityapp.R;
-import com.example.sahmed.utilityapp.toast.ToastUtils;
+import com.example.sahmed.utilityapp.utility.toast.ToastUtils;
 
 public class SnackbarActivityUtils extends AppCompatActivity implements View.OnClickListener {
     View snackBarRootView;

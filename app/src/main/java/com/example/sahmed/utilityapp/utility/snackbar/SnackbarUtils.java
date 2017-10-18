@@ -1,4 +1,4 @@
-package com.example.sahmed.utilityapp.snackbar;
+package com.example.sahmed.utilityapp.utility.snackbar;
 
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
