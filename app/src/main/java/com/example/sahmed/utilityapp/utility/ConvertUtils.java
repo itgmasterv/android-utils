@@ -314,7 +314,7 @@ public class ConvertUtils {
             e.printStackTrace();
             return null;
         } finally {
-            //   CloseUtils.closeIO(is);
+               CloseUtils.closeIO(is);
         }
     }
 
@@ -379,7 +379,7 @@ public class ConvertUtils {
             e.printStackTrace();
             return null;
         } finally {
-            //CloseUtils.closeIO(os);
+            CloseUtils.closeIO(os);
         }
     }
 
@@ -536,9 +536,8 @@ public class ConvertUtils {
 
     /**
      * view to Bitmap
-     *
-     * @param view view
-     * @return bitmap
+     *  @param view view
+     *  @return bitmap
      */
     public static Bitmap view2Bitmap(final View view) {
         if (view == null) return null;
