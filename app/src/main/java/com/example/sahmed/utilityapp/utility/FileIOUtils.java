@@ -590,10 +590,10 @@ public class FileIOUtils {
     }
 
     /**
-     * 读取文件到字节数组中
+     * Read the file into the byte array
      *
-     * @param filePath 文件路径
-     * @return 字符数组
+     * @param filePath file Path
+     * @return Character array
      */
     public static byte[] readFile2BytesByMap(final String filePath) {
         return readFile2BytesByMap(getFileByPath(filePath));
