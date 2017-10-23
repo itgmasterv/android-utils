@@ -1,4 +1,4 @@
-package com.example.sahmed.utilityapp;
+package com.example.sahmed.utilityapp.utility;
 
 import android.graphics.drawable.Drawable;
 import android.os.Build;
