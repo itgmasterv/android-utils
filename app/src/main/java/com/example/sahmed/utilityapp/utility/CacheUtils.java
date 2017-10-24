@@ -1,4 +1,4 @@
-package com.example.sahmed.utilityapp.utility.cache;
+package com.example.sahmed.utilityapp.utility;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,8 +12,6 @@ import android.os.Parcelable;
 import android.os.Process;
 import android.support.annotation.NonNull;
 import android.support.v4.util.SimpleArrayMap;
-
-import com.example.sahmed.utilityapp.utility.CloseUtils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

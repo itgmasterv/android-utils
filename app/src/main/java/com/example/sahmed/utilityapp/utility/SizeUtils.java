@@ -1,4 +1,4 @@
-package com.example.sahmed.utilityapp.utility.size;
+package com.example.sahmed.utilityapp.utility;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
