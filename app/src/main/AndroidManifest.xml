@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".utility.process.ProcessActivity">
+        <activity android:name=".utility.log.LogActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +30,7 @@
         <activity android:name=".utility.snackbar.SnackbarActivityUtils" />
         <activity android:name=".utility.sdCard.SdCardActicity" />
         <activity android:name=".utility.device.DeviceActivity" />
-        <activity android:name=".utility.log.LogActivity"></activity>
+        <activity android:name=".utility.process.ProcessActivity"/>
     </application>
 
 </manifest>

@@ -68,13 +68,13 @@ public final class LogUtils {
     private static boolean sLogSwitch         = true;  // log the total switch, the default open
     private static boolean sLog2ConsoleSwitch = true;  // whether the logcat prints，Default print
     private static String sGlobalTag         = null;  // log tag
-    private static boolean sTagIsSpace        = true;  // log标签是否为空白
+    private static boolean sTagIsSpace        = true;  // whether the log tag is blank
     private static boolean sLogHeadSwitch     = true;  // log head switch，Default open
-    private static boolean sLog2FileSwitch    = false; // log写入文件开关，默认关
-    private static boolean sLogBorderSwitch   = true;  // log边框开关，默认开
-    private static int     sConsoleFilter     = V;     // log控制台过滤器
-    private static int     sFileFilter        = V;     // log文件过滤器
-    private static int     sStackDeep         = 1;     // log栈深度
+    private static boolean sLog2FileSwitch    = false; // log write file switch, default off
+    private static boolean sLogBorderSwitch   = true;  // log border switch, the default open
+    private static int     sConsoleFilter     = V;     // log console filter
+    private static int     sFileFilter        = V;     // log file filter
+    private static int     sStackDeep         = 1;     // log stack depth
 
     private static final String FILE_SEP      = System.getProperty("file.separator");
     private static final String LINE_SEP      = System.getProperty("line.separator");
@@ -87,15 +87,11 @@ public final class LogUtils {
     private static final String NULL_TIPS     = "Log with null object.";
     private static final String NULL          = "null";
     private static final String ARGS          = "args";
-    private static final Config CONFIG        = new Config();
 
     private LogUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
-    public static Config getConfig() {
-        return CONFIG;
-    }
 
     public static void v(final Object contents) {
         log(V, sGlobalTag, contents);
@@ -444,106 +440,6 @@ public final class LogUtils {
         return true;
     }
 
-    public static class Config {
-        private Config(Context context) {
-            if (sDefaultDir != null) return;
-            if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
-                    && context.getExternalCacheDir() != null)
-                sDefaultDir = context.getExternalCacheDir() + FILE_SEP + "log" + FILE_SEP;
-            else {
-                sDefaultDir = context.getCacheDir() + FILE_SEP + "log" + FILE_SEP;
-            }
-        }
-
-        public Config setLogSwitch(final boolean logSwitch) {
-            sLogSwitch = logSwitch;
-            return this;
-        }
-
-        public Config setConsoleSwitch(final boolean consoleSwitch) {
-            sLog2ConsoleSwitch = consoleSwitch;
-            return this;
-        }
-
-        public Config setGlobalTag(final String tag) {
-            if (isSpace(tag)) {
-                sGlobalTag = "";
-                sTagIsSpace = true;
-            } else {
-                sGlobalTag = tag;
-                sTagIsSpace = false;
-            }
-            return this;
-        }
-
-        public Config setLogHeadSwitch(final boolean logHeadSwitch) {
-            sLogHeadSwitch = logHeadSwitch;
-            return this;
-        }
-
-        public Config setLog2FileSwitch(final boolean log2FileSwitch) {
-            sLog2FileSwitch = log2FileSwitch;
-            return this;
-        }
-
-        public Config setDir(final String dir) {
-            if (isSpace(dir)) {
-                sDir = null;
-            } else {
-                sDir = dir.endsWith(FILE_SEP) ? dir : dir + FILE_SEP;
-            }
-            return this;
-        }
-
-        public Config setDir(final File dir) {
-            sDir = dir == null ? null : dir.getAbsolutePath() + FILE_SEP;
-            return this;
-        }
-
-        public Config setFilePrefix(final String filePrefix) {
-            if (isSpace(filePrefix)) {
-                sFilePrefix = "util";
-            } else {
-                sFilePrefix = filePrefix;
-            }
-            return this;
-        }
-
-        public Config setBorderSwitch(final boolean borderSwitch) {
-            sLogBorderSwitch = borderSwitch;
-            return this;
-        }
-
-        public Config setConsoleFilter(@TYPE final int consoleFilter) {
-            sConsoleFilter = consoleFilter;
-            return this;
-        }
-
-        public Config setFileFilter(@TYPE final int fileFilter) {
-            sFileFilter = fileFilter;
-            return this;
-        }
-
-        public Config setStackDeep(@IntRange(from = 1) final int stackDeep) {
-            sStackDeep = stackDeep;
-            return this;
-        }
-
-        @Override
-        public String toString() {
-            return "switch: " + sLogSwitch
-                    + LINE_SEP + "console: " + sLog2ConsoleSwitch
-                    + LINE_SEP + "tag: " + (sTagIsSpace ? "null" : sGlobalTag)
-                    + LINE_SEP + "head: " + sLogHeadSwitch
-                    + LINE_SEP + "file: " + sLog2FileSwitch
-                    + LINE_SEP + "dir: " + (sDir == null ? sDefaultDir : sDir)
-                    + LINE_SEP + "filePrefix" + sFilePrefix
-                    + LINE_SEP + "border: " + sLogBorderSwitch
-                    + LINE_SEP + "consoleFilter: " + T[sConsoleFilter - V]
-                    + LINE_SEP + "fileFilter: " + T[sFileFilter - V]
-                    + LINE_SEP + "stackDeep: " + sStackDeep;
-        }
-    }
 
     private static class TagHead {
         String tag;

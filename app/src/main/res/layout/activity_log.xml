@@ -1,9 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.sahmed.utilityapp.utility.log.LogActivity">
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_log_no_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="log_with_no_tag" />
+
+            <Button
+                android:id="@+id/btn_log_with_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="log_with_tag" />
+
+            <Button
+                android:id="@+id/btn_log_in_new_thread"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="log_in_new_thread" />
+
+            <Button
+                android:id="@+id/btn_log_null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="log_null" />
+
+            <Button
+                android:id="@+id/btn_log_many_params"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="log_many_params" />
+
+            <Button
+                android:id="@+id/btn_log_long"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="log_long_string" />
+
+            <Button
+                android:id="@+id/btn_log_json"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="log_json" />
+
+            <Button
+                android:id="@+id/btn_log_xml"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="log_xml" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
