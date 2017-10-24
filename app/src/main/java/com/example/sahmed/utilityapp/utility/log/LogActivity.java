@@ -50,7 +50,6 @@ public class LogActivity extends AppCompatActivity implements View.OnClickListen
         findViewById(R.id.btn_log_json).setOnClickListener(this);
         findViewById(R.id.btn_log_xml).setOnClickListener(this);
 
-
     }
 
     @Override

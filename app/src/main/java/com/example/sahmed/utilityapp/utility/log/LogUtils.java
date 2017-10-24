@@ -92,6 +92,12 @@ public final class LogUtils {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
+    /**
+     * verbose output
+     *
+     * @param contents parameter
+     */
+
 
     public static void v(final Object contents) {
         log(V, sGlobalTag, contents);
@@ -99,13 +105,19 @@ public final class LogUtils {
     /**
      * verbose output
      *
-     * @param tag
-     * @param contents
+     * @param tag  String Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param contents parameter
      */
 
     public static void v(final String tag, final Object... contents) {
         log(V, tag, contents);
     }
+    /**
+     * debug output
+     *
+     * @param contents parameter
+     */
+
 
     public static void d(final Object contents) {
         log(D, sGlobalTag, contents);
@@ -114,13 +126,18 @@ public final class LogUtils {
     /**
      * debug output
      *
-     * @param tag
-     * @param contents
+     * @param tag String Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param contents parameter
      */
 
     public static void d(final String tag, final Object... contents) {
         log(D, tag, contents);
     }
+    /**
+     * info output
+     *
+     * @param contents parameter
+     */
 
     public static void i(final Object contents) {
         log(I, sGlobalTag, contents);
@@ -128,13 +145,19 @@ public final class LogUtils {
     /**
      * info output
      *
-     * @param tag
-     * @param contents
+     * @param tag String Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param contents parameter
      */
 
     public static void i(final String tag, final Object... contents) {
         log(I, tag, contents);
     }
+
+    /**
+     * warn output
+     *
+     * @param contents parameter
+     */
 
     public static void w(final Object contents) {
         log(W, sGlobalTag, contents);
@@ -143,13 +166,18 @@ public final class LogUtils {
     /**
      * warn output
      *
-     * @param tag
-     * @param contents
+     * @param tag String Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param contents parameter
      */
 
     public static void w(final String tag, final Object... contents) {
         log(W, tag, contents);
     }
+    /**
+     * error output
+     *
+     * @param contents parameter
+     */
 
     public static void e(final Object contents) {
         log(E, sGlobalTag, contents);
@@ -157,13 +185,18 @@ public final class LogUtils {
     /**
      * error output
      *
-     * @param tag
-     * @param contents
+     * @param tag String Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param contents parameter
      */
 
     public static void e(final String tag, final Object... contents) {
         log(E, tag, contents);
     }
+    /**
+     * assert output
+     *
+     * @param contents parameter
+     */
 
     public static void a(final Object contents) {
         log(A, sGlobalTag, contents);
@@ -171,8 +204,8 @@ public final class LogUtils {
     /**
      * assert output
      *
-     * @param tag
-     * @param contents
+     * @param tag String Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param contents parameter
      */
 
     public static void a(final String tag, final Object... contents) {
@@ -182,7 +215,7 @@ public final class LogUtils {
     /**
      * Print json
      *
-     * @param contents
+     * @param contents parameter
      */
 
     public static void json(final String contents) {
@@ -204,7 +237,7 @@ public final class LogUtils {
 
     /**
      * Output xml
-     * @param contents
+     * @param contents parameter
      */
 
     public static void xml(final String contents) {
