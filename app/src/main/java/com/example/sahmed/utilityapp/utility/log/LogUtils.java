@@ -96,6 +96,12 @@ public final class LogUtils {
     public static void v(final Object contents) {
         log(V, sGlobalTag, contents);
     }
+    /**
+     * verbose output
+     *
+     * @param tag
+     * @param contents
+     */
 
     public static void v(final String tag, final Object... contents) {
         log(V, tag, contents);
@@ -105,6 +111,13 @@ public final class LogUtils {
         log(D, sGlobalTag, contents);
     }
 
+    /**
+     * debug output
+     *
+     * @param tag
+     * @param contents
+     */
+
     public static void d(final String tag, final Object... contents) {
         log(D, tag, contents);
     }
@@ -112,6 +125,12 @@ public final class LogUtils {
     public static void i(final Object contents) {
         log(I, sGlobalTag, contents);
     }
+    /**
+     * info output
+     *
+     * @param tag
+     * @param contents
+     */
 
     public static void i(final String tag, final Object... contents) {
         log(I, tag, contents);
@@ -121,6 +140,13 @@ public final class LogUtils {
         log(W, sGlobalTag, contents);
     }
 
+    /**
+     * warn output
+     *
+     * @param tag
+     * @param contents
+     */
+
     public static void w(final String tag, final Object... contents) {
         log(W, tag, contents);
     }
@@ -128,6 +154,12 @@ public final class LogUtils {
     public static void e(final Object contents) {
         log(E, sGlobalTag, contents);
     }
+    /**
+     * error output
+     *
+     * @param tag
+     * @param contents
+     */
 
     public static void e(final String tag, final Object... contents) {
         log(E, tag, contents);
@@ -136,30 +168,27 @@ public final class LogUtils {
     public static void a(final Object contents) {
         log(A, sGlobalTag, contents);
     }
+    /**
+     * assert output
+     *
+     * @param tag
+     * @param contents
+     */
 
     public static void a(final String tag, final Object... contents) {
         log(A, tag, contents);
     }
 
-    public static void file(final Object contents) {
-        log(FILE | D, sGlobalTag, contents);
-    }
-
-    public static void file(@TYPE final int type, final Object contents) {
-        log(FILE | type, sGlobalTag, contents);
-    }
-
-    public static void file(final String tag, final Object contents) {
-        log(FILE | D, tag, contents);
-    }
-
-    public static void file(@TYPE final int type, final String tag, final Object contents) {
-        log(FILE | type, tag, contents);
-    }
+    /**
+     * Print json
+     *
+     * @param contents
+     */
 
     public static void json(final String contents) {
         log(JSON | D, sGlobalTag, contents);
     }
+
 
     public static void json(@TYPE final int type, final String contents) {
         log(JSON | type, sGlobalTag, contents);
@@ -172,6 +201,11 @@ public final class LogUtils {
     public static void json(@TYPE final int type, final String tag, final String contents) {
         log(JSON | type, tag, contents);
     }
+
+    /**
+     * Output xml
+     * @param contents
+     */
 
     public static void xml(final String contents) {
         log(XML | D, sGlobalTag, contents);
