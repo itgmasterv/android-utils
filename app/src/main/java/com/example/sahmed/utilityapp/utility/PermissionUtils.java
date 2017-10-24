@@ -1,4 +1,4 @@
-package com.example.sahmed.utilityapp.utility.permission;
+package com.example.sahmed.utilityapp.utility;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

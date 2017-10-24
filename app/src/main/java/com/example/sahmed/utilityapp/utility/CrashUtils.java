@@ -1,4 +1,4 @@
-package com.example.sahmed.utilityapp.utility.crash;
+package com.example.sahmed.utilityapp.utility;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
