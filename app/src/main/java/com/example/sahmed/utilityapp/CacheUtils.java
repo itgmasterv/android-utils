@@ -13,6 +13,8 @@ import android.os.Process;
 import android.support.annotation.NonNull;
 import android.support.v4.util.SimpleArrayMap;
 
+import com.example.sahmed.utilityapp.utility.CloseUtils;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -60,8 +62,8 @@ public class CacheUtils {
      *
      * @return {@link CacheUtils}
      */
-    public static CacheUtils getInstance() {
-        return getInstance("", DEFAULT_MAX_SIZE, DEFAULT_MAX_COUNT);
+    public static CacheUtils getInstance(Context context) {
+        return getInstance("", DEFAULT_MAX_SIZE, DEFAULT_MAX_COUNT,context);
     }
 
     /**
@@ -73,8 +75,8 @@ public class CacheUtils {
      * @param cacheName Cache directory name
      * @return {@link CacheUtils}
      */
-    public static CacheUtils getInstance(final String cacheName) {
-        return getInstance(cacheName, DEFAULT_MAX_SIZE, DEFAULT_MAX_COUNT);
+    public static CacheUtils getInstance(final String cacheName,Context context) {
+        return getInstance(cacheName, DEFAULT_MAX_SIZE, DEFAULT_MAX_COUNT,context);
     }
 
     /**
@@ -85,8 +87,8 @@ public class CacheUtils {
      * @param maxCount Maximum number of caches
      * @return {@link CacheUtils}
      */
-    public static CacheUtils getInstance(final long maxSize, final int maxCount) {
-        return getInstance("", maxSize, maxCount);
+    public static CacheUtils getInstance(final long maxSize, final int maxCount,Context context) {
+        return getInstance("", maxSize, maxCount,context);
     }
 
     /**
@@ -132,6 +134,7 @@ public class CacheUtils {
         if (cache == null) {
             cache = new CacheUtils(cacheDir, maxSize, maxCount);
             CACHE_MAP.put(cacheKey, cache);
+
         }
         return cache;
     }
@@ -218,7 +221,7 @@ public class CacheUtils {
     }
 
     /**
-     * 缓存中写入String
+     * Write String in cache
      *
      * @param key      key
      * @param value    value
@@ -287,11 +290,11 @@ public class CacheUtils {
     }
 
     /**
-     * 缓存中读取JSONObject
+     * Read JSONObject in cache
      *
      * @param key          key
      * @param defaultValue Defaults
-     * @return 存在且没过期返回对应值，否则返回默认值{@code defaultValue}
+     * @return Exists and does not expire to return the corresponding value, otherwise return to the default value{@code defaultValue}
      */
     public JSONObject getJSONObject(@NonNull final String key, final JSONObject defaultValue) {
         byte[] bytes = getBytes(key);
@@ -430,8 +433,8 @@ public class CacheUtils {
      * @param key KEY
      * @return Exists and does not expire to return the corresponding value, otherwise return{@code null}
      */
-    public Drawable getDrawable(@NonNull final String key) {
-        return getDrawable(key, null);
+    public Drawable getDrawable(@NonNull final String key,Context context) {
+        return getDrawable(key, null,context);
     }
 
     /**
@@ -441,10 +444,10 @@ public class CacheUtils {
      * @param defaultValue Defaults
      * @return Exists and does not expire to return the corresponding value, otherwise return to the default value{@code defaultValue}
      */
-    public Drawable getDrawable(@NonNull final String key, final Drawable defaultValue) {
+    public Drawable getDrawable(@NonNull final String key, final Drawable defaultValue,Context context) {
         byte[] bytes = getBytes(key);
         if (bytes == null) return defaultValue;
-        return CacheHelper.bytes2Drawable(bytes);
+        return CacheHelper.bytes2Drawable(bytes,context);
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -546,30 +549,31 @@ public class CacheUtils {
     }
 
     /**
-     * 获取缓存大小
-     * <p>单位：字节</p>
-     * <p>调用了Thread.join()，需异步调用，否则可能主线程会卡顿</p>
+     * Get cache size
+     * <p>Unit: Byte</p>
+     * <p>Called Thread.join (), need to be called asynchronously, otherwise the main thread may be Caton
+     </p>
      *
-     * @return 缓存大小
+     * @return Cache size
      */
     public long getCacheSize() {
         return mCacheManager.getCacheSize();
     }
 
     /**
-     * 获取缓存个数
-     * <p>调用了Thread.join()，需异步调用，否则可能主线程会卡顿</p>
+     * Get the number of caches
+     * <p>Called Thread.join (), need to be called asynchronously, otherwise the main thread may be Caton</p>
      *
-     * @return 缓存个数
+     * @return The number of caches
      */
     public int getCacheCount() {
         return mCacheManager.getCacheCount();
     }
 
     /**
-     * 根据键值移除缓存
+     * Remove the cache based on key values
      *
-     * @param key 键
+     * @param key key
      * @return {@code true}: 移除成功<br>{@code false}: 移除失败
      */
     public boolean remove(@NonNull final String key) {
@@ -577,9 +581,9 @@ public class CacheUtils {
     }
 
     /**
-     * 清除所有缓存
+     * Clear all caches
      *
-     * @return {@code true}: 清除成功<br>{@code false}: 清除失败
+     * @return {@code true}: Clear success<br>{@code false}: Failed to clear
      */
     public boolean clear() {
         return mCacheManager.clear();
@@ -700,9 +704,9 @@ public class CacheUtils {
         }
 
         /**
-         * 移除旧的文件
+         * Remove old files
          *
-         * @return 移除的字节数
+         * @return The number of bytes removed
          */
         private long removeOldest() {
             if (lastUsageDates.isEmpty()) return 0;
@@ -741,9 +745,9 @@ public class CacheUtils {
         }
 
         /**
-         * 创建过期时间
+         * Create expiration time
          *
-         * @param second 秒
+         * @param second second
          * @return _$millis$_
          */
         private static String createDueTime(final int second) {
@@ -925,8 +929,8 @@ public class CacheUtils {
             return drawable == null ? null : bitmap2Bytes(drawable2Bitmap(drawable));
         }
 
-        private static Drawable bytes2Drawable(final byte[] bytes) {
-            return bytes == null ? null : bitmap2Drawable(bytes2Bitmap(bytes));
+        private static Drawable bytes2Drawable(final byte[] bytes,Context context) {
+            return bytes == null ? null : bitmap2Drawable(bytes2Bitmap(bytes),context);
         }
 
         private static Bitmap drawable2Bitmap(final Drawable drawable) {
@@ -950,8 +954,8 @@ public class CacheUtils {
             return bitmap;
         }
 
-        private static Drawable bitmap2Drawable(final Bitmap bitmap) {
-            return bitmap == null ? null : new BitmapDrawable(Utils.getApp().getResources(), bitmap);
+        private static Drawable bitmap2Drawable(final Bitmap bitmap,Context context) {
+            return bitmap == null ? null : new BitmapDrawable(context.getApplicationContext().getResources(), bitmap);
         }
     }
 
