@@ -507,7 +507,6 @@ public final class LogUtils {
         return true;
     }
 
-
     private static class TagHead {
         String tag;
         String[] consoleHead;
